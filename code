@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+
+//strlen() nimmt string und gibt die Länge zurück
+
+void dreh(char* s){
+    int length = strlen(s);
+    int middle = length/2;
+    char temp; //platzhalter
+    for(int i = 0; i< middle;i++)
+    {
+        temp = s[i];//das erste zeichen
+        s[i] = s[length-i-1];//das letzte zeichen
+        s[length-i-1]=temp; //Das letzte Zeichen wird zum ersten Zeichen gesetzt
+    }
+}
+int main(){
+    char string[]= "Pearl Sama";
+    dreh(string);
+    printf("%s\n",string);
+}
